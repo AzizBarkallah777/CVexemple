@@ -1,0 +1,94 @@
+:root {
+    --primary-color: #007bff; 
+    --secondary-color: #6c757d; 
+    --background-color: rgb(22, 21, 21); 
+    --surface-color: #343a40;
+    --text-color: #9fb0c4;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Montserrat', sans-serif;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 8px 25px rgba(159, 176, 196, 1);
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+ul {
+    list-style: none;
+}
+
+.main-header {
+    background-color: var(--surface-color);
+    padding: 0.7% 0.7% 0.7% 0.7%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.logo {
+    font-family: var(--heading-font);
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+
+
+.teswira1 {
+    width: 30%;
+    height: 50%;
+    border-radius: 10px;
+}
+
+h2{
+    text-align: center;
+    font-size:50px;
+    font-family: var(--heading-font);
+}
+
+.aziz {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    margin-left:15px;
+}
+p{
+    text-align: left;
+    font-size:30px;
+}
+.aziz2 {
+    margin-left:15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+figcaption {
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+

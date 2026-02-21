@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizz - Aziz Barkallah</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page9.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">Aziz Barkallah.</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="page2.html">Academic</a></li>
+                <li><a href="page3.html">Skills</a></li>
+                <li><a href="page5.html">Portfolio</a></li>
+                <li><a href="page6.html">Passions</a></li>
+                <li><a href="page10.html">Contact</a></li>
+                <li><a href="page9.html"><span style="color:#0056b3">Quizz</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="quiz-container">
+<h1>Web Development Quiz</h1>
+
+<h3>1. What does HTML do?</h3>
+<label><input type="radio" name="q1" value="0"> Styles the page</label>
+<label><input type="radio" name="q1" value="1"> Structures the page</label>
+<label><input type="radio" name="q1" value="0"> Adds interactivity</label>
+
+<h3>2. Which tag is used for a hyperlink?</h3>
+<label><input type="radio" name="q2" value="1"> &lt;a&gt;</label>
+<label><input type="radio" name="q2" value="0"> &lt;link&gt;</label>
+<label><input type="radio" name="q2" value="0"> &lt;href&gt;</label>
+
+<h3>3. What does CSS do?</h3>
+<label><input type="radio" name="q3" value="0"> Adds logic</label>
+<label><input type="radio" name="q3" value="1"> Styles the page</label>
+<label><input type="radio" name="q3" value="0"> Structures content</label>
+
+<h3>4. Which property changes text color?</h3>
+<label><input type="radio" name="q4" value="1"> color</label>
+<label><input type="radio" name="q4" value="0"> font-style</label>
+<label><input type="radio" name="q4" value="0"> background</label>
+
+<h3>5. What does JavaScript do?</h3>
+<label><input type="radio" name="q5" value="1"> Adds interactivity</label>
+<label><input type="radio" name="q5" value="0"> Styles pages</label>
+<label><input type="radio" name="q5" value="0"> Creates HTML tags</label>
+
+<h3>6. Which symbol is used for JavaScript comments?</h3>
+<label><input type="radio" name="q6" value="1"> //</label>
+<label><input type="radio" name="q6" value="0"> &lt;!-- --&gt;</label>
+<label><input type="radio" name="q6" value="0"> **</label>
+
+<h3>7. Which are HTML elements?</h3>
+<label><input type="checkbox" id="q7_div"> &lt;div&gt;</label>
+<label><input type="checkbox" id="q7_span"> &lt;span&gt;</label>
+<label><input type="checkbox" id="q7_color"> color</label>
+
+<h3>8. Which are CSS properties?</h3>
+<label><input type="checkbox" id="q8_margin"> margin</label>
+<label><input type="checkbox" id="q8_padding"> padding</label>
+<label><input type="checkbox" id="q8_function"> function</label>
+
+<h3>9. Which can JavaScript do?</h3>
+<label><input type="checkbox" id="q9_events"> Handle events</label>
+<label><input type="checkbox" id="q9_style"> Change CSS styles</label>
+<label><input type="checkbox" id="q9_compile"> Compile HTML</label>
+
+<br>
+<button onclick="checkQuiz()">Submit Quiz</button>
+<button onclick="showAnswers()">Show Answers</button>
+<button onclick="showMistakes()">Show Mistakes</button>
+</div>
+<div id="result"></div>
+
+<script>
+function checkQuiz() {
+    var score = 0;
+    var total = 9;
+    var checkboxes = ["q7_div","q7_span","q7_color","q8_margin","q8_padding","q8_function","q9_events","q9_style","q9_compile"];
+    var i;
+    for (i=0;i<checkboxes.length;i++){
+        document.getElementById(checkboxes[i]).parentNode.style.backgroundColor="";
+    }
+    for (i=1;i<=6;i++){
+        var radios = document.getElementsByName("q"+i);
+        var j;
+        for (j=0;j<radios.length;j++){
+            radios[j].parentNode.style.backgroundColor="";
+            if (radios[j].checked && radios[j].value==="1"){
+                score++;
+            }
+        }
+    }
+    if (document.getElementById("q7_div").checked && document.getElementById("q7_span").checked && !document.getElementById("q7_color").checked){
+        score++;
+    }
+    if (document.getElementById("q8_margin").checked && document.getElementById("q8_padding").checked && !document.getElementById("q8_function").checked){
+        score++;
+    }
+    if (document.getElementById("q9_events").checked && document.getElementById("q9_style").checked && !document.getElementById("q9_compile").checked){
+        score++;
+    }
+    alert("Your score: " + score + " / " + total);
+}
+
+function showAnswers() {
+    var i,j;
+    for (i=1;i<=6;i++){
+        var radios = document.getElementsByName("q"+i);
+        for (j=0;j<radios.length;j++){
+            if (radios[j].value==="1"){
+                radios[j].parentNode.style.backgroundColor="#90ee90";
+            }
+        }
+    }
+    var answers = ["q7_div","q7_span","q8_margin","q8_padding","q9_events","q9_style"];
+    for (i=0;i<answers.length;i++){
+        document.getElementById(answers[i]).parentNode.style.backgroundColor="#90ee90";
+    }
+}
+
+function showMistakes() {
+    var i,j;
+    for (i=1;i<=6;i++){
+        var radios = document.getElementsByName("q"+i);
+        for (j=0;j<radios.length;j++){
+            if (radios[j].checked && radios[j].value==="0"){
+                radios[j].parentNode.style.backgroundColor="#ffcccb";
+            }
+        }
+    }
+    var mistakes = ["q7_color","q8_function","q9_compile"];
+    for (i=0;i<mistakes.length;i++){
+        if (document.getElementById(mistakes[i]).checked){
+            document.getElementById(mistakes[i]).parentNode.style.backgroundColor="#ffcccb";
+        }
+    }
+}
+</script>
+
+</body>
+</html>

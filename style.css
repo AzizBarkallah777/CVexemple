@@ -1,0 +1,123 @@
+:root {
+    --primary-color: #007bff; 
+    --secondary-color: #6c757d; 
+    --background-color: rgb(22, 21, 21); 
+    --surface-color: #343a40;
+    --text-color: #9fb0c4;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Montserrat', sans-serif;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 8px 25px rgba(159, 176, 196, 1);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+ul {
+    list-style: none;
+}
+
+.main-header {
+    background-color: var(--surface-color);
+    padding: 0.7% 0.7% 0.7% 0.7%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.logo {
+    font-family: var(--heading-font);
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+.home-section {
+    display: flex;
+    align-items: center;
+    padding: 128px 0;
+    min-height: 80vh;
+}
+
+.home-content {
+    flex: 1;
+    padding-right: 64px;
+}
+
+.home-title {
+    margin-left:35%;
+    font-family: var(--heading-font);
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.home-subtitle {
+    margin-left:30%;
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--secondary-color);
+    margin-bottom: 32px;
+}
+
+.bio-text {
+    margin-left:30%;
+    margin-bottom: 48px; 
+    max-width: 500px;
+}
+
+.home-image-container {
+    margin-right:19%;
+    width: 350px;
+    height: 450px;
+    box-shadow: var(--shadow-medium);
+}
+
+.home-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.social-links {
+    margin-left:30%;
+    display: flex;
+    gap: 24px; 
+}
+
+.social-icon { 
+    padding: 8px 16px; 
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+.social-icon:hover {
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+}
+
+
